@@ -1,12 +1,14 @@
 package christmas.validation;
 
+import christmas.constants.ErrorMessage;
+
 public class InputValidation {
 
 
     public void validEventDate(String input) {
         int date = convertIntoNumber(input);
         if (date < 1 || date > 31) {
-            throw new IllegalArgumentException("[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.");
+            throw new IllegalArgumentException(ErrorMessage.DATE_ERROR.getContent());
         }
     }
 
@@ -14,7 +16,7 @@ public class InputValidation {
         try {
             return Integer.parseInt(input);
         } catch (NumberFormatException exception) {
-            throw new IllegalArgumentException("[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.");
+            throw new IllegalArgumentException(ErrorMessage.DATE_ERROR.getContent());
         }
     }
 }
