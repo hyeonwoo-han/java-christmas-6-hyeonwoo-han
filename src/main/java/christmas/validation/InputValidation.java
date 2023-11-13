@@ -12,19 +12,21 @@ import java.util.List;
 public class InputValidation {
 
 
-    public void validateEventDate(String input) {
+    public int validateEventDate(String input) {
         int date = convertIntoNumber(input);
         if (date < 1 || date > 31) {
             throw new IllegalArgumentException(ErrorMessage.DATE_ERROR.getContent());
         }
+        return date;
     }
 
-    public void validateOrder(String input) {
+    public HashMap<String, Integer> validateOrder(String input) {
         HashMap<String, Integer> menusAndCounts = parseOrder(input);
         checkMenu(menusAndCounts);
         isMenuMoreThanOne(menusAndCounts);
         isNotOnlyDrink(menusAndCounts);
         isMenuLessThanTwentyOne(menusAndCounts);
+        return menusAndCounts;
     }
 
     private void checkMenu(HashMap<String, Integer> menusAndCounts) {
