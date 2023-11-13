@@ -21,8 +21,8 @@ public class InputValidationTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"해산물파스타:2,레드와인:2", "알리오올리오:1,타파스:2", "해산물파스타:0,레드와인:2", "해산물파스타:2,해산물파스타:1,레드와인1", "레드와인:1",
-            "해산물파스타:15,레드와인:6"})
+    @ValueSource(strings = {"해산물파스타:2,레드와인:2", "알리오올리오-1,타파스-2", "해산물파스타-0,레드와인-2", "해산물파스타-2,해산물파스타-1,레드와인-1",
+            "레드와인-1", "해산물파스타-15,레드와인-6"})
     @DisplayName("주문 메뉴 검증 테스트")
     public void validateOrderTest(String input) {
         assertThatThrownBy(() -> inputValidation.validateOrder(input))
