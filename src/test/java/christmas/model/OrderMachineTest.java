@@ -7,8 +7,6 @@ import christmas.model.events.Event;
 import christmas.model.events.StarredDatesEvent;
 import christmas.model.events.WeekDaysEvent;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -34,9 +32,12 @@ public class OrderMachineTest {
         Event christmasEvent = new ChristmasDDayEvent(3); // 1200
         Event starredDatesEvent = new StarredDatesEvent();          // 1000
         Event weekDaysEvent = new WeekDaysEvent(menusAndCounts);    // 2023 * 3(디저트 개수) = 6069
-        HashSet<Event> appliedEvents = new HashSet<>(List.of(christmasEvent, starredDatesEvent, weekDaysEvent));
+        int totalDiscountAmount =
+                christmasEvent.getDiscountAmount() +
+                        starredDatesEvent.getDiscountAmount() +
+                        weekDaysEvent.getDiscountAmount();
 
-        assertThat(orderMachine.getTotalMoneyAfterDiscount(appliedEvents))
+        assertThat(orderMachine.getTotalMoneyAfterDiscount(totalDiscountAmount))
                 .contains("196,731원");
     }
 }

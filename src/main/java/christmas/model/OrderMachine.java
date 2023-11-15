@@ -5,12 +5,9 @@ import christmas.constants.Dessert;
 import christmas.constants.Drink;
 import christmas.constants.MainDish;
 import christmas.constants.Menu;
-import christmas.model.events.Event;
 import java.text.NumberFormat;
-import java.util.HashSet;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Set;
 
 public class OrderMachine {
     private static final int DISCOUNT_START_CONDITION = 10000;
@@ -25,8 +22,8 @@ public class OrderMachine {
         return formatNumberAsCurrency(this.totalMoneyBeforeDiscount);
     }
 
-    public String getTotalMoneyAfterDiscount(HashSet<Event> appliedEvents) {
-        int totalMoneyAfterDiscount = calculateTotalMoneyAfterDiscount(appliedEvents);
+    public String getTotalMoneyAfterDiscount(int totalDiscountAmount) {
+        int totalMoneyAfterDiscount = calculateTotalMoneyAfterDiscount(totalDiscountAmount);
         return formatNumberAsCurrency(totalMoneyAfterDiscount);
     }
 
@@ -49,11 +46,7 @@ public class OrderMachine {
         return sum;
     }
 
-    private int calculateTotalMoneyAfterDiscount(Set<Event> appliedEvents) {
-        int totalDiscountAmount = 0;
-        for (Event event : appliedEvents) {
-            totalDiscountAmount += event.getDiscountAmount();
-        }
+    private int calculateTotalMoneyAfterDiscount(int totalDiscountAmount) {
         return this.totalMoneyBeforeDiscount - totalDiscountAmount;
     }
 
