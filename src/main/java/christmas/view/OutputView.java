@@ -35,6 +35,7 @@ public class OutputView {
     public void printTotalMoneyBeforeDiscount(String formattedTotalMoneyBeforeDiscount) {
         System.out.println(Message.TOTAL_PRICE_BEFORE_DISCOUNT_INFORM.getContent());
         System.out.println(formattedTotalMoneyBeforeDiscount);
+        System.out.print("\n");
     }
 
     public void printTotalMoneyAfterDiscount(String formattedTotalMoneyAfterDiscount) {
@@ -59,8 +60,11 @@ public class OutputView {
         for (String event : eachBenefits.keySet()) {
             if (event.equals("없음")) {
                 System.out.println(event);
+                System.out.print("\n");
+                return;
             }
-            String formattedBenefit = formatNumberAsCurrency(eachBenefits.get(event));
+            int benefitNumber = eachBenefits.get(event);
+            String formattedBenefit = formatNumberAsCurrency(benefitNumber);
             System.out.println(event + ": -" + formattedBenefit);
         }
         System.out.print("\n");
