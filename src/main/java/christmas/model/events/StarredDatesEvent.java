@@ -4,8 +4,8 @@ public class StarredDatesEvent implements Event {
     private static final String eventName = "특별 할인";
     private final int discountAmount;
 
-    public StarredDatesEvent(int discountAmount) {
-        this.discountAmount = discountAmount;
+    public StarredDatesEvent() {
+        this.discountAmount = 1000;
     }
 
     public String getEventName() {
