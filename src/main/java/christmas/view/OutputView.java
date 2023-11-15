@@ -1,6 +1,8 @@
 package christmas.view;
 
 import christmas.constants.Message;
+import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.Map;
 
 public class OutputView {
@@ -36,5 +38,22 @@ public class OutputView {
     public void showTotalMoneyAfterDiscount(String formattedTotalMoneyAfterDiscount) {
         System.out.println(Message.DISCOUNTED_TOTAL_PRICE_INFORM);
         System.out.println(formattedTotalMoneyAfterDiscount);
+    }
+
+    public void showEventDiscountInfo(Map<String, Integer> totalBenefit) {
+        System.out.println(Message.BENEFIT_INFORM);
+        for (String event : totalBenefit.keySet()) {
+            if (event.equals("없음")) {
+                System.out.println(event);
+            }
+            String formattedBenefit = formatNumberAsCurrency(totalBenefit.get(event));
+            System.out.println(event + ": -" + formattedBenefit);
+        }
+    }
+
+    private String formatNumberAsCurrency(int money) {
+        NumberFormat formatter = NumberFormat.getNumberInstance(Locale.US);
+        formatter.setGroupingUsed(true);
+        return formatter.format(money) + "원";
     }
 }
