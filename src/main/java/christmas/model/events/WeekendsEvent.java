@@ -4,6 +4,7 @@ import christmas.constants.MainDish;
 import java.util.Map;
 
 public class WeekendsEvent implements Event {
+    private static final int DISCOUNT_UNIT_PRICE = 2023;
     private static final String eventName = "주말 할인";
     private final int discountAmount;
 
@@ -23,7 +24,7 @@ public class WeekendsEvent implements Event {
         int discountAmount = 0;
         for (String menu : menusAndCounts.keySet()) {
             if (containsMainDish(menu)) {
-                discountAmount += 2023;
+                discountAmount += DISCOUNT_UNIT_PRICE * menusAndCounts.get(menu);
             }
         }
         return discountAmount;
