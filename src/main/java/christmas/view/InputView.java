@@ -13,23 +13,23 @@ public class InputView {
     }
 
     public int getVisitDateInput() {
-        String invalidVisitDate = Console.readLine();
         while (true) {
             try {
+                String invalidVisitDate = Console.readLine();
                 return inputValidation.getValidatedVisitDate(invalidVisitDate);
             } catch (IllegalArgumentException exception) {
-                System.out.println(ErrorMessage.DATE_ERROR);
+                System.out.println(ErrorMessage.DATE_ERROR.getContent());
             }
         }
     }
 
     public Map<String, Integer> getOrderInput() {
-        String invalidOrders = Console.readLine();
         while (true) {
             try {
+                String invalidOrders = Console.readLine();
                 return inputValidation.getValidatedOrder(invalidOrders);
             } catch (IllegalArgumentException exception) {
-                System.out.println(ErrorMessage.ORDER_ERROR);
+                System.out.println(ErrorMessage.ORDER_ERROR.getContent());
             }
         }
     }

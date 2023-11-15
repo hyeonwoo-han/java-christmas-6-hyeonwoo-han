@@ -63,7 +63,6 @@ public class EventPlanner {
                 totalDiscountAmount += event.getDiscountAmount();
             }
         }
-        System.out.println(totalDiscountAmount);
         return totalDiscountAmount;
     }
 
