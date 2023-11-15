@@ -52,8 +52,14 @@ public class OutputView {
     }
 
     public void showTotalBenefit(int totalBenefit) {
+        System.out.println(Message.TOTAL_BENEFIT_INFORM);
         String formattedTotalBenefit = formatNumberAsCurrency(totalBenefit);
         System.out.println(formattedTotalBenefit);
+    }
+
+    public void showBadge(String badgeName) {
+        System.out.println(Message.BADGE_INFORM);
+        System.out.println(badgeName);
     }
 
     private String formatNumberAsCurrency(int money) {
