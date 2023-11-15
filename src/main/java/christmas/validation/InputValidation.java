@@ -1,10 +1,10 @@
 package christmas.validation;
 
-import christmas.constants.Appetizer;
-import christmas.constants.Dessert;
-import christmas.constants.Drink;
 import christmas.constants.ErrorMessage;
-import christmas.constants.MainDish;
+import christmas.constants.menus.Appetizer;
+import christmas.constants.menus.Dessert;
+import christmas.constants.menus.Drink;
+import christmas.constants.menus.MainDish;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;

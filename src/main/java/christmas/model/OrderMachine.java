@@ -1,10 +1,10 @@
 package christmas.model;
 
-import christmas.constants.Appetizer;
-import christmas.constants.Dessert;
-import christmas.constants.Drink;
-import christmas.constants.MainDish;
-import christmas.constants.Menu;
+import christmas.constants.menus.Appetizer;
+import christmas.constants.menus.Dessert;
+import christmas.constants.menus.Drink;
+import christmas.constants.menus.MainDish;
+import christmas.constants.menus.Menu;
 import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package christmas.constants;
+package christmas.constants.menus;
 
 public enum MainDish implements Menu {
     T_BONE_STEAK("티본스테이크", 55000),

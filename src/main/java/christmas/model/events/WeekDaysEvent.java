@@ -1,6 +1,6 @@
 package christmas.model.events;
 
-import christmas.constants.Dessert;
+import christmas.constants.menus.Dessert;
 import java.util.Map;
 
 public class WeekDaysEvent implements Event {

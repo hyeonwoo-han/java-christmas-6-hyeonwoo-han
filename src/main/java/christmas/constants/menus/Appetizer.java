@@ -1,13 +1,14 @@
-package christmas.constants;
+package christmas.constants.menus;
 
-public enum Dessert implements Menu {
-    CHOCOLATE_CAKE("초코케이크", 15000),
-    ICE_CREAM("아이스크림", 5000);
+public enum Appetizer implements Menu {
+    BUTTON_MUSHROOM_SOUP("양송이수프", 6000),
+    TAPAS("타파스", 5500),
+    CEASER_SALAD("시저샐러드", 8000);
 
     private final String name;
     private final int price;
 
-    Dessert(String name, int price) {
+    Appetizer(String name, int price) {
         this.name = name;
         this.price = price;
     }
