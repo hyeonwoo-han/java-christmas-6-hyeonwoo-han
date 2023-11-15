@@ -1,4 +1,4 @@
-package christmas.model;
+package christmas.model.events;
 
 public interface Event {
     String getEventName();

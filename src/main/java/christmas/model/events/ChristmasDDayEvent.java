@@ -1,10 +1,10 @@
-package christmas.model;
+package christmas.model.events;
 
-public class StarredDatesEvent implements Event {
-    private static final String eventName = "특별 할인";
+public class ChristmasDDayEvent implements Event {
+    private static final String eventName = "크리스마스 디데이 할인";
     private final int discountAmount;
 
-    public StarredDatesEvent(int discountAmount) {
+    public ChristmasDDayEvent(int discountAmount) {
         this.discountAmount = discountAmount;
     }
 

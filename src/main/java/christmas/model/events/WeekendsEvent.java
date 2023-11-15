@@ -1,4 +1,4 @@
-package christmas.model;
+package christmas.model.events;
 
 public class WeekendsEvent implements Event {
     private static final String eventName = "주말 할인";
