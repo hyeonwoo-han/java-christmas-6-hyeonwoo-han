@@ -11,8 +11,7 @@ import java.util.List;
 
 public class InputValidation {
 
-
-    public int validateEventDate(String input) {
+    public int getValidatedVisitDate(String input) {
         int date = convertIntoNumber(input);
         if (date < 1 || date > 31) {
             throw new IllegalArgumentException(ErrorMessage.DATE_ERROR.getContent());
@@ -20,7 +19,7 @@ public class InputValidation {
         return date;
     }
 
-    public HashMap<String, Integer> validateOrder(String input) {
+    public HashMap<String, Integer> getValidatedOrder(String input) {
         HashMap<String, Integer> menusAndCounts = parseOrder(input);
         checkMenu(menusAndCounts);
         isMenuMoreThanOne(menusAndCounts);

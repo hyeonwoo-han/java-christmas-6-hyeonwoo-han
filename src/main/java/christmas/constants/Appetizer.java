@@ -5,7 +5,6 @@ public enum Appetizer {
     TAPAS("타파스", 5500),
     CEASER_SALAD("시저샐러드", 8000);
 
-
     private final String name;
     private final int price;
 
