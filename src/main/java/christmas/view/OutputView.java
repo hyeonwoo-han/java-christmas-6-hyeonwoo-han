@@ -27,4 +27,14 @@ public class OutputView {
             System.out.println(menu + " " + count + "개");
         }
     }
+
+    public void showTotalMoneyBeforeDiscount(String formattedTotalMoneyBeforeDiscount) {
+        System.out.println(Message.TOTAL_PRICE_BEFORE_DISCOUNT_INFORM);
+        System.out.println(formattedTotalMoneyBeforeDiscount);
+    }
+
+    public void showTotalMoneyAfterDiscount(String formattedTotalMoneyAfterDiscount) {
+        System.out.println(Message.DISCOUNTED_TOTAL_PRICE_INFORM);
+        System.out.println(formattedTotalMoneyAfterDiscount);
+    }
 }
