@@ -4,7 +4,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import christmas.model.events.ChristmasDDayEvent;
 import christmas.model.events.Event;
-import christmas.model.events.PresentEvent;
 import christmas.model.events.StarredDatesEvent;
 import christmas.model.events.WeekDaysEvent;
 import java.util.HashMap;
@@ -32,15 +31,13 @@ public class OrderMachineTest {
     public void orderMachineTotalMoneyAfterDiscountTest() {
         Event christmasEvent = new ChristmasDDayEvent(3); // 1200
         Event starredDatesEvent = new StarredDatesEvent();          // 1000
-        Event presentEvent = new PresentEvent();                    // 25000
         Event weekDaysEvent = new WeekDaysEvent(menusAndCounts);    // 2023 * 3(디저트 개수) = 6069
         int totalDiscountAmount =
                 christmasEvent.getDiscountAmount() +
                         starredDatesEvent.getDiscountAmount() +
-                        presentEvent.getDiscountAmount() +
                         weekDaysEvent.getDiscountAmount();
 
         assertThat(orderMachine.getTotalMoneyAfterDiscount(totalDiscountAmount))
-                .contains("171,731원");
+                .contains("196,731원");
     }
 }

@@ -35,7 +35,6 @@ public class EventPlanner {
         appliedEvents.add(new WeekendsEvent(menusAndCounts));
     }
 
-    // 적용된 이벤트들의 이름, 할인금액 Map 반환
     public Map<String, Integer> getEventDiscountInfo() {
         if (appliedEvents.isEmpty()) {
             return Map.of("없음", 0);
@@ -48,24 +47,34 @@ public class EventPlanner {
                 );
     }
 
-    // 적용된 이벤트들의 총 혜택 금액 계산 후 반환
+    // total benefit = total discount + present price
+    public int getTotalBenefitAmount() {
+        int totalBenefitAmount = 0;
+        for (Event event : appliedEvents) {
+            totalBenefitAmount += event.getDiscountAmount();
+        }
+        return totalBenefitAmount;
+    }
+
     public int getTotalDiscountAmount() {
         int totalDiscountAmount = 0;
         for (Event event : appliedEvents) {
-            totalDiscountAmount += event.getDiscountAmount();
+            if (!(event instanceof PresentEvent)) {
+                totalDiscountAmount += event.getDiscountAmount();
+            }
         }
+        System.out.println(totalDiscountAmount);
         return totalDiscountAmount;
     }
 
-    // 총 혜택 금액에 따라 뱃지 이름을 반환
     public String getBadgeNameByDiscount() {
-        if (getTotalDiscountAmount() >= Badge.SANTA_BADGE.getCondition()) {
+        if (getTotalBenefitAmount() >= Badge.SANTA_BADGE.getCondition()) {
             return Badge.SANTA_BADGE.getName();
         }
-        if (getTotalDiscountAmount() >= Badge.TREE_BADGE.getCondition()) {
+        if (getTotalBenefitAmount() >= Badge.TREE_BADGE.getCondition()) {
             return Badge.TREE_BADGE.getName();
         }
-        if (getTotalDiscountAmount() >= Badge.STAR_BADGE.getCondition()) {
+        if (getTotalBenefitAmount() >= Badge.STAR_BADGE.getCondition()) {
             return Badge.STAR_BADGE.getName();
         }
         return "없음";
