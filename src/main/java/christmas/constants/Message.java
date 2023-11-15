@@ -13,6 +13,7 @@ public enum Message {
     ORDERED_MENU_INFORM("<주문 메뉴>"),
     TOTAL_PRICE_BEFORE_DISCOUNT_INFORM("<할인 전 총주문 금액>"),
     GIFT_INFORM("<증정 메뉴>"),
+    ONE_CHAMPAGNE("샴페인 1개"),
     BENEFIT_INFORM("<혜택 내역>"),
     TOTAL_BENEFIT_INFORM("<총혜택 금액>"),
     DISCOUNTED_TOTAL_PRICE_INFORM("<할인 후 예상 결제 금액>"),
